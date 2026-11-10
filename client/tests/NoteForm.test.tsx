@@ -66,7 +66,7 @@ describe('NoteForm', () => {
         initial={{ title: 'Milk', body: 'Two pints' }}
         submitLabel="Save Changes"
         onSubmit={vi.fn()}
-        onCancel={vi.fn()}
+        onCancel={onCancel}
       />,
     );
 
