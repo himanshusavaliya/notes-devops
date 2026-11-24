@@ -1,4 +1,4 @@
-    import { Router } from 'express';
+import { Router } from 'express';
 import { config } from '../config';
 
 export function createHealthRouter(): Router {

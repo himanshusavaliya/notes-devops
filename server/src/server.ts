@@ -1,7 +1,6 @@
-
 import { createApp } from './app';
 import { config } from './config';
-import { createNoteRepository } from './repositories/repositoriesfactory';
+import { createNoteRepository } from './repositories/repositoryFactory';
 
 console.log('Factory Function =', createNoteRepository);
 console.log('Store Type =', config.storeType);

@@ -1,4 +1,3 @@
-
 import { Router } from 'express';
 import type { NoteRepository } from '../repositories/NoteRepository';
 import { validateNoteInput } from '../validation';
@@ -6,7 +5,7 @@ import { validateNoteInput } from '../validation';
 // Each handler does three things only: read the request, call the
 // repository, and choose a status code. The rules live elsewhere.
 export function createNotesRouter(repository: NoteRepository): Router {
-console.log('Notes Router Repository =', repository);
+  console.log('Notes Router Repository =', repository);
   const router = Router();
 
   router.get('/', async (_req, res) => {
