@@ -32,7 +32,7 @@ describe('App', () => {
     render(<App />);
 
     expect(
-      await screen.findByRole('heading', { name: 'Milk' })
+      await screen.findByRole('heading', { name: 'Milk' }),
     ).toBeInTheDocument();
   });
 
@@ -55,7 +55,7 @@ describe('App', () => {
     });
 
     expect(
-      await screen.findByRole('heading', { name: 'Bread' })
+      await screen.findByRole('heading', { name: 'Bread' }),
     ).toBeInTheDocument();
   });
 
@@ -67,7 +67,7 @@ describe('App', () => {
     ]);
 
     vi.mocked(api.updateNote).mockResolvedValue(
-      makeNote('1', 'Fresh Milk', 'Three pints')
+      makeNote('1', 'Fresh Milk', 'Three pints'),
     );
 
     render(<App />);
@@ -100,7 +100,7 @@ describe('App', () => {
 
     // Check updated note.
     expect(
-      await screen.findByRole('heading', { name: 'Fresh Milk' })
+      await screen.findByRole('heading', { name: 'Fresh Milk' }),
     ).toBeInTheDocument();
   });
 
@@ -124,13 +124,13 @@ describe('App', () => {
 
   it('shows an error when the notes cannot be loaded', async () => {
     vi.mocked(api.listNotes).mockRejectedValue(
-      new Error('Failed to load notes')
+      new Error('Failed to load notes'),
     );
 
     render(<App />);
 
     expect(await screen.findByRole('alert')).toHaveTextContent(
-      /Failed to load notes/i
+      /Failed to load notes/i,
     );
   });
 });

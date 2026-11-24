@@ -49,7 +49,7 @@ describe('NoteForm', () => {
         initial={{ title: 'Milk', body: 'Two pints' }}
         onSubmit={vi.fn()}
         submitLabel="Save Changes"
-      />
+      />,
     );
 
     expect(screen.getByLabelText(/Title/i)).toHaveValue('Milk');
@@ -61,7 +61,7 @@ describe('NoteForm', () => {
     const onCancel = vi.fn();
 
     render(
-      <NoteForm onSubmit={vi.fn()} onCancel={onCancel} submitLabel={''} />
+      <NoteForm onSubmit={vi.fn()} onCancel={onCancel} submitLabel={''} />,
     );
 
     await user.click(screen.getByRole('button', { name: 'Cancel' }));

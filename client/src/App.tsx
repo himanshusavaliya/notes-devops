@@ -39,7 +39,7 @@ export function App() {
       if (!editing) return;
       const updated = await updateNote(editing.id, input);
       setNotes((current) =>
-        current.map((note) => (note.id === updated.id ? updated : note))
+        current.map((note) => (note.id === updated.id ? updated : note)),
       );
       setEditing(null);
     });
